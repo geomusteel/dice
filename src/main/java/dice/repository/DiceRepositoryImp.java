@@ -1,17 +1,18 @@
 package dice.repository;
 
 import dice.domain.Dice;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Repository
 public class DiceRepositoryImp implements DiceRepository {
 
     private final static Map<Integer, Integer> diceRepository = new HashMap<>();
+    private Dice lastDice = new Dice();
 
     public DiceRepositoryImp() {
         diceRepository.put(1, 0);
@@ -33,7 +34,12 @@ public class DiceRepositoryImp implements DiceRepository {
         Integer temp2 = diceRepository.get(number2);
         diceRepository.put(number2, ++temp2);
 
+        lastDice = dice;
+    }
 
+    @Override
+    public Dice getLastDice() {
+        return lastDice;
     }
 
     @Override
@@ -43,6 +49,8 @@ public class DiceRepositoryImp implements DiceRepository {
 
     @Override
     public void clean() {
+        lastDice.setNumber1(0);
+        lastDice.setNumber2(0);
         diceRepository.put(1, 0);
         diceRepository.put(2, 0);
         diceRepository.put(3, 0);

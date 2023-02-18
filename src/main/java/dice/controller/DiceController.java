@@ -17,7 +17,7 @@ public class DiceController {
 
     @GetMapping("/dice")
     public String createDice(Model model) {
-        Dice dice = diceService.lollDice();
+        Dice dice = diceRepository.getLastDice();
         model.addAttribute("dice",dice);
         model.addAttribute("diceNumbers",diceRepository.findAll());
         return "/dice/diceIndex";
