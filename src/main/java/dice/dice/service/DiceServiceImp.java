@@ -1,6 +1,6 @@
-package dice.service;
+package dice.dice.service;
 
-import dice.domain.Dice;
+import dice.dice.domain.Dice;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;

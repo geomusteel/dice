@@ -1,4 +1,4 @@
-package dice.domain;
+package dice.dice.domain;
 
 
 import lombok.Getter;

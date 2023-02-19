@@ -1,8 +1,8 @@
-package dice.controller;
+package dice.dice.controller;
 
-import dice.domain.Dice;
-import dice.repository.DiceRepository;
-import dice.service.DiceService;
+import dice.dice.domain.Dice;
+import dice.dice.repository.DiceRepository;
+import dice.dice.service.DiceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

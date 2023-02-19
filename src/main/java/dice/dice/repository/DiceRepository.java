@@ -1,9 +1,8 @@
-package dice.repository;
+package dice.dice.repository;
 
 
-import dice.domain.Dice;
+import dice.dice.domain.Dice;
 
-import java.util.List;
 import java.util.Map;
 
 public interface DiceRepository {

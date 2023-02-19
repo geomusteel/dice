@@ -1,8 +1,6 @@
-package dice.repository;
+package dice.dice.repository;
 
-import dice.domain.Dice;
-import lombok.Getter;
-import lombok.Setter;
+import dice.dice.domain.Dice;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
