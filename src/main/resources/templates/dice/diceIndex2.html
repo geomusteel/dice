@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>주사위 굴리기</title>
 
     <link rel="stylesheet" type="text/css" href="/css/dice.css">
@@ -13,10 +12,7 @@
           integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Nanum+Gothic&display=swap');
         body {
-            font-family: 'Nanum Gothic', sans-serif;
             background-color: #141c2f;
         }
     </style>
@@ -24,18 +20,18 @@
 
 <body>
 
-<div class="text-center mt-5 text-white">
+<div class="text-center my-5 text-white">
     <div>
-        <i class="fa-solid fa-dice fa-5x"></i></div>
-    <div class="mt-2">
-        <p style="font-family: 'Dongle', sans-serif; font-size: 5rem">주사위게임</p>
+    <i class="fa-solid fa-dice fa-5x"></i></div>
+    <div class="display-5 pt-4">
+    주사위게임
     </div>
 </div>
 
 
 <div class="container text-center">
-    <div class="row justify-content-center mb-5">
-        <div class="col col-xl-6 col-md-8">
+    <div class="row justify-content-center my-5">
+        <div class="col col-md-8 col-lg-6">
 
             <div class="rounded-5 d-flex justify-content-center align-items-center"
                  style="background-color: #1f2a48 ; height: 20rem ;">
@@ -117,48 +113,56 @@
                         <div class="circle6 circle6-6"></div>
                     </div>
                 </th:block>
+
             </div>
         </div>
     </div>
-</div>
 
-<div class="display-6 text-white text-center"> 숫자 통계</div>
+    <div class="display-6 text-white"> 숫자 통계</div>
 
-<div class="container text-center text-white">
-    <div class="row justify-content-center justify-content-center my-5">
-        <div class="col col-xl-6 col-md-8 rounded-5" style="background-color: #1f2a48">
-
-            <div class="d-flex justify-content-center align-items-center py-2">
-                <div class="flex-grow-1 rounded-5 mx-2 py-1" style="background-color: #141c2f"><strong>1</strong></div>
-                <div class="flex-grow-1 rounded-5 mx-2 py-1" style="background-color: #141c2f"><strong>2</strong></div>
-                <div class="flex-grow-1 rounded-5 mx-2 py-1" style="background-color: #141c2f"><strong>3</strong></div>
-                <div class="flex-grow-1 rounded-5 mx-2 py-1" style="background-color: #141c2f"><strong>4</strong></div>
-                <div class="flex-grow-1 rounded-5 mx-2 py-1" style="background-color: #141c2f"><strong>5</strong></div>
-                <div class="flex-grow-1 rounded-5 mx-2 py-1" style="background-color: #141c2f"><strong>6</strong></div>
-            </div>
-            <div class="d-flex justify-content-center align-items-center py-2">
-                <div class="flex-grow-1" th:text="${diceNumbers.get(1)}" style="width: 15%">1</div>
-                <div class="flex-grow-1" th:text="${diceNumbers.get(2)}" style="width: 15%">1</div>
-                <div class="flex-grow-1" th:text="${diceNumbers.get(3)}" style="width: 15%">1</div>
-                <div class="flex-grow-1" th:text="${diceNumbers.get(4)}" style="width: 15%">1</div>
-                <div class="flex-grow-1" th:text="${diceNumbers.get(5)}" style="width: 15%">1</div>
-                <div class="flex-grow-1" th:text="${diceNumbers.get(6)}" style="width: 15%">1</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container text-center">
     <div class="row justify-content-center my-5">
-        <div class="col col-xl-3 col-md-4">
+        <div class="col col-md-8 col-lg-6">
+            <table class="table table-borderless text-white rounded-4" style="background: #1f2a48;">
+                <thead>
+                <tr>
+                    <th class="py-3 col-1" scope="col">1</th>
+                    <th class="py-3 col-1" scope="col">2</th>
+                    <th class="py-3 col-1" scope="col">3</th>
+                    <th class="py-3 col-1" scope="col">4</th>
+                    <th class="py-3 col-1" scope="col">5</th>
+                    <th class="py-3 col-1" scope="col">6</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="py-3 col-1" th:text="${diceNumbers.get(1)}">1</td>
+                    <td class="py-3 col-1" th:text="${diceNumbers.get(2)}">2</td>
+                    <td class="py-3 col-1" th:text="${diceNumbers.get(3)}">3</td>
+                    <td class="py-3 col-1" th:text="${diceNumbers.get(4)}">4</td>
+                    <td class="py-3 col-1" th:text="${diceNumbers.get(5)}">5</td>
+                    <td class="py-3 col-1" th:text="${diceNumbers.get(6)}">6</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center my-5">
+
+        <div class="col col-md-4 col-lg-3">
+
             <button type="button" th:onclick="|location.href='@{/dice/loll}'|"
                     class="btn py-3 rounded-4 btn-primary w-100">다시 굴리기
             </button>
         </div>
-        <div class="col col-xl-3 col-md-4">
+
+        <div class="col col-md-4 col-lg-3">
+
             <button type="button" th:onclick="|location.href='@{/dice/clean}'|"
                     class="btn py-3 rounded-4 btn-danger w-100">초기화
             </button>
+
         </div>
     </div>
 
