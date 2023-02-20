@@ -32,13 +32,10 @@ public class DiceController {
         return "redirect:/dice";
     }
 
-
     @GetMapping("/dice/clean")
     public String diceClean() {
         diceRepository.clean();
         return "redirect:/dice";
     }
-
-
 
 }

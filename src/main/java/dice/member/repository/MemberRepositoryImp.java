@@ -4,16 +4,18 @@ import dice.member.domain.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
 @RequiredArgsConstructor
 public class MemberRepositoryImp implements MemberRepository {
 
-    Map<String, Member> memberMap = new ConcurrentHashMap<>();
+    static Map<String, Member> memberMap = new ConcurrentHashMap<>();
     public static long sequence = 0L;
-
 
     @Override
     public void save(Member member) {
@@ -22,10 +24,15 @@ public class MemberRepositoryImp implements MemberRepository {
     }
 
     @Override
-    public Member findUserId(String userId) {
-        if (memberMap.get(userId) != null) {
-            return memberMap.get(userId);
-        }
-        return null;
+    public Optional<Member> findUserId(String userId) {
+        return findAll().stream()
+                .filter(m -> m.getUserId().equals(userId))
+                .findFirst();
     }
+
+    @Override
+    public List<Member> findAll() {
+        return new ArrayList<>(memberMap.values());
+    }
+
 }
