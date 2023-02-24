@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>d-day</title>
-    <link rel="stylesheet" href="/assets/css/todo-style.css"/>
+    <link rel="stylesheet" href="/static/assets/css/todo-style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
           integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -14,7 +14,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
             crossorigin="anonymous"></script>
-    <script defer src="/assets/js/todo-script.js"></script>
+    <script defer src="/static/assets/js/todo-script.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Nanum+Gothic&display=swap');
@@ -26,11 +26,12 @@
 
 <h1>Todo</h1>
 <div class="todo-container">
-    <input type="text" id="todo-input" onkeydown="keyCodeCheck()">
-    <ul>
-        <li>인사하기</li>
-        <li>손흔들기</li>
+    <input type="text" id="todo-input" onkeydown="keyEventCheck()">
+    <ul id="todo-list">
     </ul>
+</div>
+<div class="delete-btn-wrapper">
+    <button onclick="deleteAll()">전체 삭제</button>
 </div>
 
 
