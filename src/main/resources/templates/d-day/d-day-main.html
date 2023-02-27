@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>d-day</title>
+    <link href="/assets/css/body.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/d-day-style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
           integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -15,17 +16,14 @@
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
             crossorigin="anonymous"></script>
     <script defer src="/assets/js/d-day-script.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Nanum+Gothic&display=swap');
+    </style>
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Nanum+Gothic&display=swap');
 
-    body {
-        font-family: 'Nanum Gothic', sans-serif;
-        background-color: #141c2f;
-    }
-</style>
-<body>
+<body class="bodyDefault">
+
 <div th:replace="~{layout/nav.html :: top-nav}"></div>
 
 <div class="container text-center" style="max-width: 650px">
@@ -89,7 +87,6 @@
         </div>
     </div>
 </div>
-
 
 
 </body>

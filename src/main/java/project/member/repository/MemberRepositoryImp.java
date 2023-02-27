@@ -24,10 +24,11 @@ public class MemberRepositoryImp implements MemberRepository {
     }
 
     @Override
-    public Optional<Member> findUserId(String userId) {
+    public Member findUserId(String userId) {
         return findAll().stream()
                 .filter(m -> m.getUserId().equals(userId))
-                .findFirst();
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
