@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@
 <div th:replace="~{layout/nav.html :: top-nav}"></div>
 
 <div class="display-5 text-center text-white my-5">
-  대충 메인 페이지
+  <span th:text="|${member}님 환영합니다|"></span>
 </div>
 
 

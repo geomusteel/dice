@@ -15,11 +15,6 @@ public class DiceController {
     private final DiceService diceService;
     private final DiceRepository diceRepository;
 
-    @GetMapping("/")
-    public String home(){
-        return "/home";
-    }
-
     @GetMapping("/dice")
     public String createDice(Model model) {
         Dice dice = diceRepository.getLastDice();
